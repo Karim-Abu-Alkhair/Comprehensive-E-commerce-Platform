@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# E-Commerce React Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple e-commerce platform built with React, featuring a shopping cart, checkout process, and order history. The application uses Context API for state management and localStorage for data persistence.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+### Components
 
-### `npm start`
+- **Cart**: Displays the items in the shopping cart and allows users to remove items, update quantities, and proceed to checkout.
+- **Checkout**: Handles the checkout process where users input their details, and upon form submission, the order is stored and the cart is cleared.
+- **OrderHistory**: Displays the user's past orders with details on each order's items and shipping information.
+- **Loader**: A loading spinner component used during suspense fallback.
+- **ProductCard**: Displays individual product details and allows users to add the product to the cart.
+- **Products**: Displays a grid of products with filtering and sorting options.
+- **Layout**: A wrapper component that includes navigation and suspense handling for the application.
+- **Navigation**: Contains the navigation menu with links to home, cart, and order history.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Context
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **CartContext**: Provides the cart state and functions to add, remove, update, and clear items in the cart. It also handles storing orders and persists data using `localStorage`.
 
-### `npm test`
+### Pages
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Cart Page**: Shows the contents of the cart and allows users to proceed to checkout.
+- **Checkout Page**: Handles the form for user details and processes the order.
+- **OrderHistory Page**: Lists all past orders made by the user.
+- **Products Page**: Displays the list of products with the ability to filter by category and sort by price.
 
-### `npm run build`
+### Index
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **index.js**: The entry point of the application. Wraps the application with `CartProvider` for state management and includes `react-hot-toast` for notifications.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository.
+2. Run `npm install` to install the required dependencies.
+3. Run `npm start` to start the development server.
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Adding Products to Cart**: Browse products on the homepage, and click "Add to Cart" on any product to add it to your cart.
+- **View Cart**: Navigate to the cart page to view items in your cart.
+- **Checkout**: On the cart page, click "Proceed to Checkout" to fill out your shipping details and complete the purchase.
+- **Order History**: After completing a purchase, view your order history to see past orders.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **React**: JavaScript library for building user interfaces.
+- **React Router DOM**: Used for routing in the application.
+- **Formik**: Form handling in React.
+- **Yup**: Schema validation for Formik forms.
+- **React Hot Toast**: Toast notifications for user feedback.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Notes
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The application uses `localStorage` to persist cart items and orders across page reloads.
+- The toast notifications provide feedback when an item is added to the cart.
